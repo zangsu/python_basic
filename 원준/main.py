@@ -13,7 +13,27 @@ def pb2():
         result = result + p
         i+= 1
     print(f"합계 : {result}")
-def pb3():
-    print()
+def pb6(stone):
+    white = 0
+    black = 0
+    for line in stone:
+        for j in line:
+            if j == 1:
+                black += 1
+            elif j == 2:
+                white += 1
+    print(f"흑돌의 개수 : {black}\n백돌의 개수 : {white}")
+    return black, white
+def pb7(stone):
+    for line in stone:
+        for i in line:
+            if i == 0:
+                print("x ",end="")
+            elif i == 1:
+                print("○ ",end="")
+            elif i == 2:
+                print("● ",end="")
+        print("\n")
 
-pb2()
+stone = [[0,0,0,0,0,0,0,0,0],[0,1,0,1,2,1,2,1,0],[0,2,1,1,1,2,2,0,0],[0,0,2,2,2,1,0,2,0],[0,0,0,0,0,1,0,2,1],[0,0,0,2,0,1,2,1,0],[0,0,0,2,1,0,1,1,0],[0,0,0,1,1,0,0,0,0],[0,0,0,0,2,2,2,0,0]]
+pb7(stone)
