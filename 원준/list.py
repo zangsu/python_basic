@@ -1,3 +1,4 @@
+from random import *
 def list1():
     list=[('다현', 200), ('정연',150), ('쯔위', 90), ('사나', 30), ('지효',15)]
     print(list)
@@ -41,10 +42,37 @@ def printM(A):
         print(A.list, end="")
         A = A.next
     print()
-def addmail(list, name, Email):#이메일 사전순으로 정렬
+def addmail(list, name, Email):#이메일 사전순으로 정렬a
     now = list
-    while now.next != None:
+    while now.next != None and now.next.list[1]<Email:
         now = now.next
-    now.next = Mail(name, Email)
+    new =  Mail(name, Email)
+    temp = now.next
+    now.next = new
+    new.next = temp
+
     return list
-list3()
+class node:
+    def __init__(self, num):
+        self.num = num
+        self.next = None
+    
+def list4():#뽑은 순서대로 라고 해서 그대로 뒀음
+    for i in range(6):
+        if i == 0:
+            a = node(randint(0,46))
+        else:
+            while(1):
+                temp = randint(0,46)
+                now = a
+                while now.next != None and now.next.num != temp:
+                    now = now.next
+                if now.next == None:
+                    now.next = node(temp)
+                    break
+                else:
+                    continue
+    while a != None:
+        print(a.num, end=" ")
+        a = a.next
+list4()
