@@ -22,6 +22,10 @@ def append_frined(list, name, times):
 def list2():
     print()
     #뭘 원하는거지?
+class pol:
+    def __init__(self,t, p ):
+        self.t = t
+        self.p = p
 class Mail:
     def __init__(self, name, Email):
         self.list = [name, Email]
@@ -79,7 +83,6 @@ def list5():#일단 생성까진 했으ㅁ
     list = []
     for i in range(10):
         list.append(store(chr(ord('A')+i)))
-        print(list[i].data[0], list[i].len)
     min = 0
     for i in range(1, 10):
         if list[i].len < list[min].len:
@@ -87,7 +90,7 @@ def list5():#일단 생성까진 했으ㅁ
     head = headdep(list[min])
     now = head
     del list[min]
-    while list != None:
+    while len(list) != 0:
         min = 0
         for i in range(len(list)):
             if list[i].len < list[min].len:
@@ -101,9 +104,6 @@ def list5():#일단 생성까진 했으ㅁ
         now = now.next
         if now == head:
             break
-        
-
-
 class dep:
     def __init__(self, a, data):
         self.next = a
@@ -159,4 +159,4 @@ class headnode(bside):
         self.name = name
         self.next = self
         self.prev = self
-list5()
+list1()
