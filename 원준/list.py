@@ -20,12 +20,23 @@ def append_frined(list, name, times):
     list1 = list1 + list2
     return list1
 def list2():
-    print()
-    #뭘 원하는거지?
+    tx=[300, 20, 0]
+    px=[7, -4, 5]
+    a = []
+    for i in range(len(tx)):
+        a.append(pol(tx[len(tx)-1-i], px[len(tx)-1-i]))
+        if i != 0:
+            a[i].next = a[i-1]
+    now = a[2]
+    print("P(x) = ", end="")
+    while now != None:
+        print(f"{now.p:+d}x^{now.t} ", end="")
+        now = now.next
 class pol:
     def __init__(self,t, p ):
         self.t = t
         self.p = p
+        self.next = None
 class Mail:
     def __init__(self, name, Email):
         self.list = [name, Email]
@@ -159,4 +170,4 @@ class headnode(bside):
         self.name = name
         self.next = self
         self.prev = self
-list1()
+list2()
