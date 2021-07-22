@@ -38,5 +38,19 @@ def stack2():
         top -= 1
         print()
 def queue1():
-    
+    line = ['정국', '뷔', '지민', '진', '슈가']
+    rear = 0
+    top = len(line)
+    li = []
+    print(li[0])
+    # while rear != top:
+    #     print(top)
+    #     print(f"대기 줄 상태 : [ ", end="")
+    #     for i in range(top):
+    #         print(f"'{line[i]}'", end="")
+    #         if i != top:
+    #             print(",",end="")
+    #     print("]")
+    #     print(f"{line[rear]} 님 식당에 들어감")
+    #     del line[rear]
 queue1()
